@@ -1,0 +1,60 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.app {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  height: fit-content;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+h1 { text-align: center; margin-bottom: 20px; color: #333; }
+
+.task-form { display: flex; gap: 8px; margin-bottom: 16px; }
+.task-form input {
+  flex: 1; padding: 10px 12px; font-size: 1rem;
+  border: 2px solid #ddd; border-radius: 8px; outline: none;
+}
+.task-form input:focus { border-color: #667eea; }
+
+button {
+  cursor: pointer; border: none; border-radius: 8px;
+  padding: 10px 14px; font-size: 0.95rem;
+  background: #667eea; color: #fff; transition: opacity 0.2s;
+}
+button:hover { opacity: 0.85; }
+
+.filters { display: flex; gap: 6px; margin-bottom: 16px; }
+.filters button { flex: 1; background: #eee; color: #444; }
+.filters button.active { background: #667eea; color: #fff; }
+
+.task-list { list-style: none; }
+.task {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 4px; border-bottom: 1px solid #eee;
+}
+.task label { display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1; }
+.task.done span { text-decoration: line-through; color: #aaa; }
+.delete { background: transparent; color: #e74c3c; padding: 4px 8px; }
+
+.empty { text-align: center; color: #888; padding: 20px 0; }
+
+footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 16px; color: #666; font-size: 0.9rem;
+}
+.clear { background: #e74c3c; font-size: 0.8rem; padding: 6px 10px; }
+
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+button:focus-visible, input:focus-visible { outline: 2px solid #333; outline-offset: 2px; }
